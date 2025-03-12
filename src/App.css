@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Cambia el color si quieres */
+}
+
+.has-background-coffee{
+    background-color: #732a19 !important;
+}
+
+.has-rounded-bottom {
+    border-radius: 0 0 10px 10px;
+}
