@@ -6,7 +6,7 @@ import {
 } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import { NextButton, PrevButton, usePrevNextButtons } from './arrowButtons';
-import { DotButton, useDotButton } from './dotButtons';
+import { useDotButton } from './dotButtons';
 import { screen1, screen2, screen3, screen4 } from '../../assets';
 
 const TWEEN_FACTOR_BASE = 0.2;

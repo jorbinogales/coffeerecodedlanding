@@ -16,10 +16,7 @@ const Card: React.FC<CardProps> = ({
 	imageWith,
 	imageHeight,
 	name,
-	username,
-	description,
-	linkedin,
-	github,
+	username
 }) => {
 	return (
 		<AnimatePresence>

@@ -1,10 +1,7 @@
-import React from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Carousel } from '../../components/carousel';
 
 export default function TeamComponent() {
-	const [emblaRef] = useEmblaCarousel();
 	return (
 		<AnimatePresence>
 			<motion.div

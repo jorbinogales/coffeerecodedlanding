@@ -8,8 +8,8 @@ import "bulma/css/bulma.min.css";
 import FooterComponent from './sections/footer/footer';
 
 function App() {
-	const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+	const [loading] = useState(false);
+  const [theme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     document.documentElement.classList.toggle("has-background-dark", theme === "dark");
