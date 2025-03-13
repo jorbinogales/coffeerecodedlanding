@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({
 				whileInView={{ opacity: 1 }}
 				viewport={{ once: true }}
 			>
-				<div className="card" style={{ maxWidth: '300px', margin: 'auto' }}>
+				<div className="card" style={{ maxWidth: '300px', margin: 'auto', backgroundColor: 'white' }}>
 					<div
 						className="card-image has-background-white"
 						style={{ position: 'relative' }}

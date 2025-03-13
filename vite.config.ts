@@ -4,11 +4,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    include: ['@splinetool/runtime'], // Asegura que Vite lo procese
+    include: ['@splinetool/runtime'], 
   },
   build: {
     rollupOptions: {
-      external: [], // No excluir módulos importantes
+      external: [], 
     },
   },
 })

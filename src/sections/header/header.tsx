@@ -35,9 +35,9 @@ export default function HeaderComponent() {
 			</div>
 			<div
 				className="container is-flex is-align-items-center is-justify-content-center"
-				style={{ height: '100vh' }}
+				style={{ height: '100vh', backgroundColor: '#732a19'}}
 			>
-				<div className="container" style={{ position: 'absolute', zIndex: 2 }}>
+				<div className="container is-paddingless is-mobile" style={{ position: 'absolute', zIndex: 2, padding: '20px' }}>
 					<h1
 						className="title has-text-light"
 						style={{
@@ -107,7 +107,7 @@ export default function HeaderComponent() {
 					</div>
 				</div>
 			</div>
-			<div
+			<div className='is-hidden-mobile is-block-tablet'
 				style={{
 					position: 'absolute',
 					top: 0,
