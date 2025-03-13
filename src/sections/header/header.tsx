@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import Spline from '@splinetool/react-spline';
 import Typewriter from 'typewriter-effect';
 import logo from '../../assets/logo.png';
@@ -12,6 +14,17 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './header.css';
 
 export default function HeaderComponent() {
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 768);
+		};
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	return (
 		<>
 			<div
@@ -35,9 +48,12 @@ export default function HeaderComponent() {
 			</div>
 			<div
 				className="container is-flex is-align-items-center is-justify-content-center"
-				style={{ height: '100vh', backgroundColor: '#732a19'}}
+				style={{ height: '100vh', backgroundColor: '#732a19' }}
 			>
-				<div className="container is-paddingless is-mobile" style={{ position: 'absolute', zIndex: 2, padding: '20px' }}>
+				<div
+					className="container is-paddingless is-mobile"
+					style={{ position: 'absolute', zIndex: 2, padding: '20px' }}
+				>
 					<h1
 						className="title has-text-light"
 						style={{
@@ -101,13 +117,36 @@ export default function HeaderComponent() {
 						>
 							<FontAwesomeIcon icon={faEnvelope} size="3x" />
 						</a>
-						<a href="https://wa.me/584149549050" className="icon is-large" style={{ color: 'white' }}>
+						<a
+							href="https://wa.me/584149549050"
+							className="icon is-large"
+							style={{ color: 'white' }}
+						>
 							<FontAwesomeIcon icon={faSquareWhatsapp} size="3x" />
 						</a>
 					</div>
 				</div>
+				<Wave
+					className='is-block-mobile is-hidden-table is-hidden-desktop'
+					fill="#fff"
+					paused={false}
+					style={{
+						position: 'absolute',
+						bottom: isMobile ? 0 : -10, // Cambia el valor según si es móvil o no
+						left: 0,
+						width: '100vw',
+						zIndex: 2,
+					}}
+					options={{
+						height: 40,
+						amplitude: 20,
+						speed: 0.25,
+						points: 10,
+					}}
+				/>
 			</div>
-			<div className='is-hidden-mobile is-block-tablet'
+			<div
+				className="is-hidden-mobile is-block-tablet"
 				style={{
 					position: 'absolute',
 					top: 0,
@@ -120,13 +159,14 @@ export default function HeaderComponent() {
 				<Spline scene="https://prod.spline.design/OU93CPVa4FT2xTs5/scene.splinecode" />
 			</div>
 			<Wave
+				className='is-hidden-mobile is-block-table is-block-desktop'
 				fill="#fff"
 				paused={false}
 				style={{
 					position: 'absolute',
-					bottom: -10,
+					bottom: isMobile ? -1 : -10, // Cambia el valor según si es móvil o no
 					left: 0,
-					width: '100vw', // Asegura que ocupe todo el ancho de la ventana
+					width: '100vw',
 					zIndex: 2,
 				}}
 				options={{
