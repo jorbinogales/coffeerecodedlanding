@@ -132,7 +132,7 @@ export default function HeaderComponent() {
 					paused={false}
 					style={{
 						position: 'absolute',
-						bottom: isMobile ? 0 : -10, // Cambia el valor según si es móvil o no
+						bottom: isMobile ? -5 : -10, // Cambia el valor según si es móvil o no
 						left: 0,
 						width: '100vw',
 						zIndex: 2,
